@@ -1,0 +1,41 @@
+{
+  "name": "warehouse-back",
+  "version": "rolling",
+  "description": "Warehouse ECP Backend",
+  "main": "index.js",
+  "repository": "https://gitlab.com/waldhar420/warehouse-back.git",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bullmq": "^1.37.1",
+    "date-fns": "^2.22.1",
+    "express": "^4.17.1",
+    "ioredis": "^4.19.1",
+    "joi": "^17.4.0",
+    "json5": "^2.2.0",
+    "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/bugfix/replace-json-with-msgpck.tar.gz",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.2",
+    "p-map": "^4.0.0",
+    "qs": "^6.10.1",
+    "razorpay": "^2.0.6",
+    "world-countries": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "start:dev": "bash start_dev.sh",
+    "start": "NODE_PATH=. node index.js"
+  }
+}
