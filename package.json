@@ -10,7 +10,7 @@
     "bullmq": "^1.37.1",
     "date-fns": "^2.22.1",
     "express": "^4.17.1",
-    "ioredis": "^4.19.1",
+    "ioredis": "^4.27.6",
     "joi": "^17.4.0",
     "json5": "^2.2.0",
     "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz",
