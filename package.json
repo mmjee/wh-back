@@ -4,8 +4,7 @@
   "description": "Warehouse ECP Backend",
   "main": "index.js",
   "repository": "https://gitlab.com/waldhar420/warehouse-back.git",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "body-parser": "^1.19.0",
     "bullmq": "^1.37.1",
