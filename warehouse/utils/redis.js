@@ -12,7 +12,7 @@ class RedisClient {
   MAGIC_KEYS = MAGIC_KEYS
 
   initialize () {
-    this.redis = new Redis(ConfigManager.getKey('services.redis', process.env.WH_REDIS_URL || 'redis://localhost:6379'))
+    this.redis = new Redis(ConfigManager.getKey('services.redis', process.env.WH_REDIS_URL))
   }
 
   async getKey (k) {

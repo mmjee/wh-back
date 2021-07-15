@@ -8,7 +8,8 @@ async function getGlobalConfig (req, res) {
   }
   res.send({
     ...resp,
-    razorpayKeyId: ConfigManager.getKey('services.rzpId', process.env.RZP_KEY_ID)
+    razorpayKeyId: ConfigManager.getKey('services.rzpId', process.env.RZP_KEY_ID),
+    needsInitialConfig: false,
   })
 }
 

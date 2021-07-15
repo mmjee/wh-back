@@ -1,16 +1,18 @@
 const { Queue, QueueScheduler, Worker } = require('bullmq')
+const Redis = require('ioredis')
 
 const ConfigManager = require('warehouse/utils/config')
 const Razorpay = require('warehouse/utils/razorpay')
 const { emailTransport } = require('warehouse/utils/email-service')
 const { Order, ProductCodes, User } = require('warehouse/db/models')
 
-const ConnectionInfo = ConfigManager.getKey('services.redis', process.env.WH_REDIS_URL || 'redis://localhost:6379')
+const ConnectionInfo = ConfigManager.getKey('services.redis', process.env.WH_REDIS_URL)
+const connection = new Redis(ConnectionInfo)
 const DividerLine = (new Array(15)).fill('-').join('') + '\n'
 
 // Deliver after Order stuff
 const DeliverAfterOrderQ = new Queue('DELIVER_AFTER_ORDER', {
-  connection: ConnectionInfo,
+  connection,
   defaultJobOptions: {
     attempts: 5,
     backoff: {
@@ -100,7 +102,7 @@ async function handleDelivery (job) {
 
 exports.deliverAfterOrder = DeliverAfterOrderQ
 exports.deliverAfterOrderScheduler = new QueueScheduler('DELIVER_AFTER_ORDER', {
-  connection: ConnectionInfo
+  connection
 })
 exports.deliverAfterOrderWorker = new Worker('DELIVER_AFTER_ORDER', async (...args) => {
   try {
@@ -110,12 +112,12 @@ exports.deliverAfterOrderWorker = new Worker('DELIVER_AFTER_ORDER', async (...ar
     throw e
   }
 }, {
-  connection: ConnectionInfo
+  connection
 })
 
 // Check Pending Transaction and stuff
 const CheckPendingTxQ = new Queue('CHECK_PENDING_TX', {
-  connection: ConnectionInfo,
+  connection,
   defaultJobOptions: {
     attempts: 5,
     backoff: {
@@ -127,7 +129,7 @@ const CheckPendingTxQ = new Queue('CHECK_PENDING_TX', {
 
 exports.checkPendingTransaction = CheckPendingTxQ
 exports.checkPendingTransactionScheduler = new QueueScheduler('CHECK_PENDING_TX', {
-  connection: ConnectionInfo
+  connection
 })
 
 exports.checkPendingTransactionWorker = new Worker('CHECK_PENDING_TX', async (job) => {
@@ -144,5 +146,5 @@ exports.checkPendingTransactionWorker = new Worker('CHECK_PENDING_TX', async (jo
   }
   await relevantOrder.save()
 }, {
-  connection: ConnectionInfo
+  connection
 })

@@ -49,9 +49,16 @@ const OrderRoutes = require('warehouse/routes/order-mgmt')
 
 async function main () {
   const globalConfigPath = process.env.WH_CFG || 'config.json5'
+  let needsSetup = false
   try {
     await fs.access(globalConfigPath)
+    if (ConfigManager.getKey('needsSetup', false)) {
+      needsSetup = true
+    }
   } catch (e) {
+    needsSetup = true
+  }
+  if (needsSetup) {
     app.get('/api/v1/get-global-config', function getGlobalConfig (req, res) {
       res.send({
         needsInitialConfig: true,
@@ -73,7 +80,7 @@ async function main () {
         })
         return
       }
-      await fs.writeFile(globalConfigPath, json5.stringify(req.body.connectionInfo))
+      await fs.writeFile(globalConfigPath, json5.stringify(req.body.connectionInfo, null, 4))
       ConfigManager.setConfig(req.body.connectionInfo)
 
       await Redis.initialize()
