@@ -13,7 +13,7 @@
     "ioredis": "^4.19.1",
     "joi": "^17.4.0",
     "json5": "^2.2.0",
-    "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/bugfix/replace-json-with-msgpck.tar.gz",
+    "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz",
     "lodash": "^4.17.20",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
