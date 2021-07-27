@@ -41,11 +41,12 @@ app.use(function (req, res, next) {
 const { getGlobalConfig } = require('warehouse/routes/global-config')
 const HomepageRoutes = require('warehouse/routes/homepage')
 const DebugRoutes = require('warehouse/routes/debug')
-const UserRoutes = require('warehouse/routes/user')
-const ProductRoutes = require('warehouse/routes/products')
-const SandCRoutes = require('warehouse/routes/search-and-category')
-const CartRoutes = require('warehouse/routes/cart-mgmt')
-const OrderRoutes = require('warehouse/routes/order-mgmt')
+const UserRoutes = require('warehouse/routes/view-data/user')
+const ProductRoutes = require('warehouse/routes/view-data/products')
+const AdminProductRoutes = require('warehouse/routes/admin/products')
+const SandCRoutes = require('warehouse/routes/view-data/search-and-category')
+const CartRoutes = require('warehouse/routes/order-flow/cart-mgmt')
+const OrderRoutes = require('warehouse/routes/order-flow/order-mgmt')
 
 async function main () {
   const globalConfigPath = process.env.WH_CFG || 'config.json5'
@@ -157,9 +158,9 @@ async function main () {
   app.post('/api/v1/admin-create-new-category', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, SandCRoutes.createNewCategory)
 
   // Products
-  app.post('/api/v1/admin-create-new-product', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, ProductRoutes.createNewProduct)
-  app.get('/api/v1/admin-get-all-products', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, ProductRoutes.getAllProductsForAdmin)
-  app.put('/api/v1/admin-add-codes-to-product', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, ProductRoutes.addCodesToProduct)
+  app.post('/api/v1/admin-create-new-product', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, AdminProductRoutes.createNewProduct)
+  app.get('/api/v1/admin-get-all-products', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, AdminProductRoutes.getAllProductsForAdmin)
+  app.put('/api/v1/admin-add-codes-to-product', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, AdminProductRoutes.addCodesToProduct)
 
   app.get('/api/v1/get-product-by-id', ProductRoutes.getProductById)
   app.get('/api/v1/get-top-20-products', ProductRoutes.getTopTwentyProducts)
