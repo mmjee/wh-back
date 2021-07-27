@@ -163,7 +163,7 @@ async function main () {
   app.put('/api/v1/admin-add-codes-to-product', betterauthMiddleware.authRequired, betterauthMiddleware.adminOnly, AdminProductRoutes.addCodesToProduct)
 
   app.get('/api/v1/get-product-by-id', ProductRoutes.getProductById)
-  app.get('/api/v1/get-top-20-products', ProductRoutes.getTopTwentyProducts)
+  app.get('/api/v1/list-products', ProductRoutes.listProducts)
 
   // Cart Routes
   app.get('/api/v1/get-cart-products', betterauthMiddleware.authRequired, CartRoutes.getProductsInCart)

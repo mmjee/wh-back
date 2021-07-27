@@ -47,13 +47,13 @@ async function getProductById (req, res) {
   })
 }
 
-async function getTopTwentyProducts (req, res) {
+async function listProducts (req, res) {
   const QF = translateQueryToFilter(req.query)
   let pl
   try {
     pl = await Product.find(QF).sort({
       orders7d: 1
-    }).limit(20).populate('category')
+    }).populate('category')
   } catch (e) {
     res.status(500).send({
       error: true,
@@ -74,5 +74,5 @@ async function getTopTwentyProducts (req, res) {
 
 module.exports = {
   getProductById,
-  getTopTwentyProducts
+  listProducts
 }
