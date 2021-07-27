@@ -47,6 +47,7 @@ const AdminProductRoutes = require('warehouse/routes/admin/products')
 const SandCRoutes = require('warehouse/routes/view-data/search-and-category')
 const CartRoutes = require('warehouse/routes/order-flow/cart-mgmt')
 const OrderRoutes = require('warehouse/routes/order-flow/order-mgmt')
+const AdminOrderRoutes = require('warehouse/routes/admin/orders')
 
 async function main () {
   const globalConfigPath = process.env.WH_CFG || 'config.json5'
@@ -176,6 +177,7 @@ async function main () {
   app.post('/api/v1/handle-payment', betterauthMiddleware.authRequired, OrderRoutes.handlePayment)
   app.get('/api/v1/get-order-by-id', betterauthMiddleware.authRequired, OrderRoutes.getOrderByID)
   app.get('/api/v1/get-all-orders', betterauthMiddleware.authRequired, OrderRoutes.listOrder)
+  app.get('/api/v1/admin-get-all-orders', betterauthMiddleware.authRequired, AdminOrderRoutes.getAllOrders)
 
   app.listen(ConfigManager.getKey('http.port', false) || process.env.WH_HTTP_PORT || 3000)
 }
