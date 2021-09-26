@@ -668,10 +668,10 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-date-fns@^2.16.1, date-fns@^2.22.1:
-  version "2.22.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.22.1.tgz#1e5af959831ebb1d82992bf67b765052d8f0efc4"
-  integrity sha512-yUFPQjrxEmIsMqlHhAhmxkuH769baF21Kk+nZwZGyrMoyLA+LugaQtC0+Tqf9CBUUULWwUJt6Q5ySI3LJDDCGg==
+date-fns@^2.16.1, date-fns@^2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.24.0.tgz#7d86dc0d93c87b76b63d213b4413337cfd1c105d"
+  integrity sha512-6ujwvwgPID6zbI0o7UbURi2vlLDR9uP26+tW6Lg+Ji3w7dd0i3DOcjcClLjLPranT60SSEFBwdSyYwn/ZkPIuw==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.6.9:
   version "2.6.9"
@@ -1764,9 +1764,9 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-"libbetterauth@https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz":
+"libbetterauth@https://git.maharshi.ninja/root/libbetterauth/archive/d76e4f4fea50babafbaf574a26adf05d8b5b326b.tar.gz":
   version "0.0.1"
-  resolved "https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz#02b9a8e0bfa44ba907a9222a0c3e375ec2089865"
+  resolved "https://git.maharshi.ninja/root/libbetterauth/archive/d76e4f4fea50babafbaf574a26adf05d8b5b326b.tar.gz#44510704cb32b09d47a7e58a932afa28bbec19d6"
   dependencies:
     date-fns "^2.16.1"
     lodash.isstring "^4.0.1"
@@ -2002,25 +2002,25 @@ ms@2.1.2, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-msgpackr-extract@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/msgpackr-extract/-/msgpackr-extract-1.0.13.tgz#39f1958d9cf1c436e18cc544aacec1af62b661d1"
-  integrity sha512-JlQPllMLETiuQ5Vv3IAz+4uOpd1GZPOoCHv9P5ka5P5gkTssm/ejv0WwS4xAfB9B3vDwrExRwuU8v3HRQtJk2Q==
+msgpackr-extract@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/msgpackr-extract/-/msgpackr-extract-1.0.14.tgz#87d3fe825d226e7f3d9fe136375091137f958561"
+  integrity sha512-t8neMf53jNZRF+f0H9VvEUVvtjGZ21odSBRmFfjZiyxr9lKYY0mpY3kSWZAIc7YWXtCZGOvDQVx2oqcgGiRBrw==
   dependencies:
     nan "^2.14.2"
     node-gyp-build "^4.2.3"
 
 msgpackr@^1.3.7:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/msgpackr/-/msgpackr-1.3.7.tgz#1c14199c50cda973d2f10b6e4f4e004b2f772418"
-  integrity sha512-0fXsmwkr3L7+Nb+aTI96AIDfHlYP2OhBKaFbXGpo7rISv8RED7e14DkFxDKD+xT0MY8aud2xuh7E8KFv4uN73w==
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/msgpackr/-/msgpackr-1.4.4.tgz#872f03fc99eb8f8c1c99615072c7ea12205429be"
+  integrity sha512-MFK+aGsB3WqUWt1tb4hOTK+px4PvZE/kT7jQCr1exYQimkqPAfEkJ9OMFiW1XKBtWAvN93VwUPQWhOaPuSuZXQ==
   optionalDependencies:
-    msgpackr-extract "^1.0.13"
+    msgpackr-extract "^1.0.14"
 
 nan@^2.14.2:
-  version "2.14.2"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
-  integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.15.0.tgz#3f34a473ff18e15c1b5626b62903b5ad6e665fee"
+  integrity sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -2033,9 +2033,9 @@ negotiator@0.6.2:
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
 node-gyp-build@^4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.2.3.tgz#ce6277f853835f718829efb47db20f3e4d9c4739"
-  integrity sha512-MN6ZpzmfNCRM+3t57PTJHgHyw/h4OWnZ6mR8P5j/uZtqQr46RRuDE/P+g3n0YR/AiYXeWixZZzaip77gdICfRg==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.3.0.tgz#9f256b03e5826150be39c764bf51e993946d71a3"
+  integrity sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==
 
 nodemailer@^6.6.2:
   version "6.6.2"
