@@ -1,16 +1,23 @@
+const Joi = require('joi')
+const pMap = require('p-map')
+
 const {
   Product,
   ProductCodes,
   Category
 } = require('warehouse/db/models')
-const Joi = require('joi')
 const { validateWithSchema } = require('warehouse/utils/validate')
+const { getQuantityAvailable } = require('warehouse/db/product-utils')
 
 async function getAllProductsForAdmin (req, res) {
   const products = await Product.find({})
   res.send({
     ok: true,
-    products
+    products: await pMap(products, async function (p) {
+      const data = p.toJSON()
+      data.quantity = await getQuantityAvailable(p)
+      return data
+    })
   })
 }
 
